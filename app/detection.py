@@ -36,14 +36,14 @@ def detect_vehicles(image_path: str):
             xyxy = box.xyxy[0].tolist()
             x1, y1, x2, y2 = map(int, xyxy)
             w, h = x2 - x1, y2 - y1
+
             if w < MIN_WIDTH or h < MIN_HEIGHT:
-                continue  # Слишком маленький объект
+                continue
 
-            # Проверка на дубликат
             if is_duplicate((x1, y1, x2, y2), seen_boxes):
-                continue  # Уже был такой (почти идентичный) объект
+                continue
 
-            seen_boxes.append((x1, y1, x2, y2))  # Добавляем в список
+            seen_boxes.append((x1, y1, x2, y2))
 
             cropped_path = save_cropped_object(image, (x1, y1, x2, y2), label)
             detections.append({
@@ -54,6 +54,3 @@ def detect_vehicles(image_path: str):
     return detections
 
 
-image_path = "test_img.jpg"
-detections = detect_vehicles(image_path)
-print(detections)
