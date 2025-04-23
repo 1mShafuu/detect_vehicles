@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pillow
+torch
+torchvision
+torchaudio
+ultralytics  # YOLOv8
+python-multipart  # для загрузки изображений
+pydantic
+typing
