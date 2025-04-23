@@ -33,6 +33,4 @@ def detect_vehicles(image_path: str):
     return detections
 
 
-# image_path = "test_img.jpg"
-# detections = detect_vehicles(image_path)
-# print(detections)
+
