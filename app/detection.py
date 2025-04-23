@@ -2,7 +2,7 @@ from ultralytics import YOLO
 from PIL import Image
 from app.utils import save_cropped_object
 
-model = YOLO('/models/yolov8m.pt')
+model = YOLO('models/yolov8m.pt')
 
 VEHICLE_CLASSES = {'car', 'bicycle'}
 MIN_WIDTH = 20
@@ -31,6 +31,5 @@ def detect_vehicles(image_path: str):
             })
 
     return detections
-
 
 
